@@ -1,0 +1,17 @@
+name: Execute with parametes
+
+on :
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "deployment Environment"
+        required: true
+        default : "dev"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Print selected environemtn
+          run: echo " selected environment is ${{ github.event.inputs.environment}}"
