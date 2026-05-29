@@ -3,10 +3,20 @@ name: Execute with parametes
 on :
   workflow_dispatch:
     inputs:
-      environment:
-        description: "deployment Environment"
-        required: true
-        default : "dev"
+        environment:
+            description: "deployment Environment"
+            required: true
+            type: choice
+            options:
+                - dev
+                - prod
+                - test
+        deploy:
+            description: "Deploy Application?"
+            required: true
+            type: boolean
+        
+      
 
 jobs:
   build:
@@ -15,3 +25,6 @@ jobs:
     steps:
         - name: Print selected environemtn
           run: echo " selected environment is ${{ github.event.inputs.environment}}"
+        
+        - name: Print deploy option
+          run: echo 'Prints deploy option is ${{github.event.inputs.deploy}}'
