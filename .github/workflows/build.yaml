@@ -27,4 +27,4 @@ jobs:
               run: docker --version
             
             - name: Build Docker Image
-              run: docker build -t python-demo:${{github.action.inputs.image_tag}} ./Practice/.
+              run: docker build -t python-demo:${{github.event.inputs.image_tag}}.${{github.run_number}} ./Practice/.
