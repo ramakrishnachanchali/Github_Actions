@@ -1,7 +1,4 @@
-from datetime import datetime
+from app import get_message
 
-def get_message():
-    return f"Hello GitHub Actions - {datetime.now().date()}"
-
-if __name__ == "__main__":
-    print(get_message())
+def test_message():
+    assert "Hello GitHub Actions" in get_message()
