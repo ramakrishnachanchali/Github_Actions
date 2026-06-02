@@ -16,4 +16,4 @@ jobs:
                 python-version: '3.13'
 
             - name: run python app
-              run: python test.py
+              run: python ./Practice/test.py
