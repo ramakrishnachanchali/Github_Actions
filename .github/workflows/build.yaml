@@ -24,7 +24,7 @@ jobs:
               run: pip install -r ./Practice/requirements.txt
         
             - name: run unit testes
-              run: pytest
+              run: pytest Practice -v
 
             - name: Docker Version
               run: docker --version
