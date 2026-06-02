@@ -2,26 +2,26 @@ name: Python build
 
 on:
   workflow_dispatch:
-    inputs:
-      image_tag:
-        description: Docker Tag
-        required: true
-        default: v1
 
 jobs:
-    build:
-        name: python build
+    buil_python:
+        name: Build a python application
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v6
+            - name: Checkout Code
+              uses: actions/checkout@v6
 
-            - uses: actions/setup-python@v6
+            - name: setup python
+              uses: actions/setup-python@v6
               with:
                 python-version: '3.13'
-
-            - name: run python app
-              run: python ./Practice/test.py
+            
+            - name: install dependencies
+              run: pip install -r requirements.txt
+        
+            - name: run unit testes
+              run: pytest
 
             - name: Docker Version
               run: docker --version
