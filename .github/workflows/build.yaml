@@ -37,7 +37,7 @@ jobs:
             
             # - name: Build Docker Image
             #   run: docker build -t python-demo:${{github.event.inputs.image_tag}}.${{github.run_number}} ./Practice/.
-    build_docker image:
+    builddockerimage:
         name: Build a python application
         runs-on: ubuntu-latest
 
