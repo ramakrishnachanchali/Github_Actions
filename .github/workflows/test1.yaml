@@ -17,3 +17,9 @@ jobs:
 
       - name: Display Python Version
         run: python --version
+
+      - name: Show GitHub Variables
+        run: |
+          echo "Run Number = ${{ github.run_number }}"
+          echo "Run ID = ${{ github.run_id }}"
+          echo "Repository = ${{ github.repository }}"    
