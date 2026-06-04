@@ -1,0 +1,19 @@
+name: Python Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_python:
+    name: Build Python Application
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Display Python Version
+        run: python --version
