@@ -22,4 +22,9 @@ jobs:
         run: |
           echo "Run Number = ${{ github.run_number }}"
           echo "Run ID = ${{ github.run_id }}"
-          echo "Repository = ${{ github.repository }}"    
+          echo "Repository = ${{ github.repository }}"
+      
+      - name: Print Workspace Info
+        run: |
+          pwd
+          ls -la
